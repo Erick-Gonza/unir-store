@@ -12,7 +12,6 @@ export default function HomePage() {
 	});
 
 	useEffect(() => {
-		// Filtra productos para cada categoría. Ajusta los nombres según tus categorías reales.
 		setCategories({
 			category1: products.filter(
 				(product) => product.category.toLowerCase() === `men's clothing`

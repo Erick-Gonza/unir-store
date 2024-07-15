@@ -4,7 +4,7 @@ import { useOrders } from '../context/orderContext';
 
 export default function CartPage() {
 	const { cart, updateCartItem, removeFromCart } = useCart();
-	const { addOrder } = useOrders();
+	const { addOrder, clearCart } = useOrders();
 
 	const calculateTotal = () => {
 		return cart
@@ -25,7 +25,7 @@ export default function CartPage() {
 		};
 		addOrder(newOrder);
 		alert('Order placed successfully!');
-		// Aquí también podrías limpiar el carrito si fuera necesario.
+		clearCart();
 	};
 
 	return (

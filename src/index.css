@@ -7,11 +7,11 @@
 }
 
 .header {
-	@apply flex-shrink-0;
+	@apply flex-shrink-0 shadow-md z-50;
 }
 
 .main {
-	@apply flex-1;
+	@apply flex-1 z-50;
 }
 
 .footer {
@@ -88,26 +88,22 @@
 }
 
 .hero {
-	@apply h-auto flex flex-col gap-2 w-[calc(100%-2rem)] mx-auto;
+	@apply h-auto flex flex-col gap-2 w-[calc(100%-2rem)] mx-auto relative z-10;
 }
 
 .hero-banner {
-	@apply w-full flex justify-center items-center mx-2.5;
+	@apply w-full flex justify-center items-center mx-2.5 relative z-10;
 }
 
 .hero-banner img {
 	@apply w-full rounded-lg h-96;
 }
 
-.category-section {
-	@apply mt-10;
-}
-
 .category-section h2 {
-	@apply mb-5 text-2xl container mx-auto;
+	@apply mb-5 mt-10 text-2xl container mx-auto;
 }
 
-.products-list {
+.category-section__list {
 	@apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 container mx-auto;
 }
 
