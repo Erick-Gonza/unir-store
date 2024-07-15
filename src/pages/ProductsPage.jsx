@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Product from '../components/Product';
 import { useProducts } from '../context/productContext';
+import ProductsList from '../components/ProductsList';
 
 export default function ProductsPage() {
 	const { products } = useProducts();
@@ -60,15 +60,7 @@ export default function ProductsPage() {
 				</div>
 			</div>
 
-			<div className="products-page__list mt-6">
-				{filteredProducts.length > 0 ? (
-					filteredProducts.map((product) => (
-						<Product key={product.id} product={product} />
-					))
-				) : (
-					<p className="products-page__notfound">No products found</p>
-				)}
-			</div>
+			<ProductsList products={filteredProducts} />
 		</section>
 	);
 }

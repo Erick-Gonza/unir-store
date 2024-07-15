@@ -5,6 +5,8 @@ import ProductPage from './pages/ProductPage.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import HomePage from './pages/HomePage.jsx';
+import CartPage from './pages/CartPage.jsx';
+import ReturnsPage from './pages/ReturnsPage.jsx';
 
 const HeaderLayout = () => (
 	<>
@@ -39,12 +41,12 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/cart',
-				element: <div>This is cart</div>,
+				element: <CartPage />,
 				errorElement: <ErrorPage />,
 			},
 			{
 				path: '/returns',
-				element: <div>This is returns</div>,
+				element: <ReturnsPage />,
 				errorElement: <ErrorPage />,
 			},
 		],

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/cartContext';
 import { Link } from 'react-router-dom';
 
 export default function Product({ product }) {
-	const [cart, setCart] = useState([]);
+	const { addToCart } = useCart();
+	const [quantity, setQuantity] = useState(1);
 
-	const addToCart = (product) => {
-		setCart([...cart, product]);
-		console.log('Product added to cart:', product);
+	const handleQuantityChange = (e) => {
+		setQuantity(parseInt(e.target.value, 10));
 	};
 
 	return (
@@ -19,12 +20,23 @@ export default function Product({ product }) {
 						alt={product.title}
 					/>
 					<h3 className="product__title">{product.title}</h3>
+					<p className="product__price">${product.price}</p>
 				</div>
-				<p className="product__price">${product.price}</p>
 			</Link>
+			<div className="quantity-selector">
+				<label htmlFor={`quantity-${product.id}`}>Quantity: </label>
+				<input
+					id={`quantity-${product.id}`}
+					type="number"
+					min="1"
+					value={quantity}
+					onChange={handleQuantityChange}
+					className="quantity-input w-16 p-1 text-center border rounded"
+				/>
+			</div>
 			<button
 				className="product__add-to-cart"
-				onClick={() => addToCart(product)}
+				onClick={() => addToCart(product, quantity)}
 			>
 				Add to Cart
 			</button>
