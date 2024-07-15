@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+	@apply flex flex-col min-h-screen;
+}
+
+.header {
+	@apply flex-shrink-0;
+}
+
+.main {
+	@apply flex-1;
+}
+
+.footer {
+	@apply flex-shrink-0 bg-gray-800 text-white p-6;
+}
+
+.products-page {
+	@apply flex flex-col items-center p-4 bg-gray-100 min-h-screen;
+}
+
+.search-container {
+	@apply w-full p-4 bg-white shadow mb-6 flex flex-col gap-6;
+}
+
+.search-input {
+	@apply w-full p-2 rounded border border-gray-300;
+}
+
+.products-page__title {
+	@apply text-3xl font-bold mb-6;
+}
+
+.products-page__list {
+	@apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 container mx-auto;
+}
+
+.products-page__notfound {
+	@apply text-center text-gray-500;
+}
+
+.product {
+	@apply bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-col justify-between;
+}
+
+.product-card {
+	@apply flex flex-col items-center;
+}
+
+.product__image {
+	@apply w-full max-h-64 h-64 object-contain rounded mb-4;
+}
+
+.product__price {
+	@apply text-green-500 text-center font-semibold;
+}
+
+.product-page {
+	@apply bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 container mx-auto mt-6 md:mt-12;
+}
+
+.product__container {
+	@apply flex flex-col items-center justify-between h-full w-full p-4;
+}
+
+.product__title {
+	@apply text-lg font-semibold mb-2 text-center;
+}
+
+.product__price {
+	@apply text-green-500 text-center font-semibold;
+}
+
+.product__add-to-cart {
+	@apply border-none bg-green-500 text-white py-2 px-4 rounded cursor-pointer transition-all duration-200;
+}
+
+.product__add-to-cart:hover {
+	@apply bg-green-600;
+}
+
+/* Additional styles */
+.home-page {
+	@apply w-full p-5;
+}
+
+.hero {
+	@apply h-auto flex flex-col gap-2 w-[calc(100%-2rem)] mx-auto;
+}
+
+.hero-banner {
+	@apply w-full flex justify-center items-center mx-2.5;
+}
+
+.hero-banner img {
+	@apply w-full rounded-lg h-96;
+}
+
+.category-section {
+	@apply mt-10;
+}
+
+.category-section h2 {
+	@apply mb-5 text-2xl container mx-auto;
+}
+
+.products-list {
+	@apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 container mx-auto;
+}
