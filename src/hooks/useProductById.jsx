@@ -7,8 +7,11 @@ export default function useProductById({ id }) {
 	const fetchProductById = async () => {
 		try {
 			const { data } = await axios.get(
-				`https://fakestoreapi.com/products/${id}`
+				`https://products-production-866b.up.railway.app/elastic/products/${id}`
 			);
+			// const { data } = await axios.get(
+			// 	`https://fakestoreapi.com/products/${id}`
+			// );
 			setProduct(data);
 		} catch (error) {
 			console.log('Error fetching product by ID:', error);

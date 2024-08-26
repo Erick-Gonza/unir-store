@@ -8,7 +8,10 @@ export default function ProductContextProvider({ children }) {
 
 	useEffect(() => {
 		async function fetchData() {
-			const { data } = await axios.get('https://fakestoreapi.com/products');
+			// const { data } = await axios.get('https://fakestoreapi.com/products');
+			const { data } = await axios.get(
+				'https://products-production-866b.up.railway.app/elastic/products'
+			);
 			setProducts(data);
 		}
 		fetchData();
