@@ -36,16 +36,16 @@ export default function CartPage() {
 					<div className="cart-page__list">
 						{cart.map((item) => (
 							<div key={item.id} className="cart-item">
-								<img
+								{/* <img
 									src={item.image}
 									alt={item.title}
 									className="cart-item__image"
-								/>
+								/> */}
 								<div className="cart-item__details">
-									<h3 className="cart-item__title">{item.title}</h3>
-									<p className="cart-item__price">
+									<h3 className="cart-item__title">{item.name}</h3>
+									{/* <p className="cart-item__price">
 										${(item.price * item.quantity).toFixed(2)}
-									</p>
+									</p> */}
 									<p className="cart-item__quantity">
 										Quantity:
 										<input
@@ -59,7 +59,7 @@ export default function CartPage() {
 										/>
 									</p>
 									<button
-										className="cart-item__remove"
+										className="cart-item__remove px-4 py-2 bg-white border rounded-md hover:bg-slate-400 hover:text-white"
 										onClick={() => removeFromCart(item.id)}
 									>
 										Remove
@@ -68,7 +68,7 @@ export default function CartPage() {
 							</div>
 						))}
 						<div className="cart-page__total">
-							<h3>Total: ${calculateTotal()}</h3>
+							{/* <h3>Total: ${calculateTotal()}</h3> */}
 						</div>
 					</div>
 					<button

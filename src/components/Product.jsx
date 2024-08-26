@@ -37,7 +37,7 @@ export default function Product({ product }) {
 				/>
 			</div>
 			<button
-				className="product__add-to-cart"
+				className="product__add-to-cart mt-2"
 				onClick={() => addToCart(product, quantity)}
 			>
 				Add to Cart

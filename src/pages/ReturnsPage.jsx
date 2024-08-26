@@ -19,28 +19,28 @@ export default function OrdersPage() {
 							<div className="order-item__details">
 								{order.items.map((item) => (
 									<div key={item.id} className="order-product-item flex mb-2">
-										<img
+										{/* <img
 											src={item.image}
 											alt={item.title}
 											className="order-product-item__image w-16 h-16 object-contain mr-4"
-										/>
+										/> */}
 										<div>
 											<h4 className="order-product-item__title font-semibold">
-												{item.title}
+												{item.name}
 											</h4>
 											<p className="order-product-item__quantity">
 												Quantity: {item.quantity}
 											</p>
-											<p className="order-product-item__price">
+											{/* <p className="order-product-item__price">
 												Price: ${(item.price * item.quantity).toFixed(2)}
-											</p>
+											</p> */}
 										</div>
 									</div>
 								))}
 							</div>
-							<div className="order-item__total font-bold text-xl">
+							{/* <div className="order-item__total font-bold text-xl">
 								Total: ${order.total}
-							</div>
+							</div> */}
 							<div className="order-item__actions mt-4">
 								{order.returnRequested ? (
 									<p className="text-red-500">Return Requested</p>

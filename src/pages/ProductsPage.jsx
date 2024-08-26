@@ -5,24 +5,25 @@ import ProductsList from '../components/ProductsList';
 export default function ProductsPage() {
 	const { products } = useProducts();
 	const [searchProduct, setSearchProduct] = useState('');
-	const [searchCategory, setSearchCategory] = useState('');
+	// const [searchCategory, setSearchCategory] = useState('');
 
 	const handleSearch = (e) => {
 		setSearchProduct(e.target.value);
 	};
 
-	const handleCategoryChange = (e) => {
-		setSearchCategory(e.target.value);
-	};
+	// const handleCategoryChange = (e) => {
+	// 	setSearchCategory(e.target.value);
+	// };
 
 	const filteredProducts = products.filter((product) => {
-		const matchesProduct = product.title
-			.toLowerCase()
-			.includes(searchProduct.toLowerCase());
-		const matchesCategory = searchCategory
-			? product.category.toLowerCase() === searchCategory.toLowerCase()
-			: true;
-		return matchesProduct && matchesCategory;
+		const matchesProduct = product?.name
+			?.toLowerCase()
+			?.includes(searchProduct.toLowerCase());
+		// const matchesCategory = searchCategory
+		// 	? product?.category?.toLowerCase() === searchCategory?.toLowerCase()
+		// 	: true;
+		// return matchesProduct && matchesCategory;
+		return matchesProduct;
 	});
 
 	return (
@@ -36,7 +37,7 @@ export default function ProductsPage() {
 					value={searchProduct}
 					onChange={handleSearch}
 				/>
-				<div className="flex flex-col gap-2">
+				{/* <div className="flex flex-col gap-2">
 					<label htmlFor="category" className="mr-2">
 						Filter by Category:
 					</label>
@@ -49,7 +50,7 @@ export default function ProductsPage() {
 						<option value="">All Categories</option>
 						{[
 							...new Set(
-								products.map((product) => product.category.toLowerCase())
+								products.map((product) => product?.category?.toLowerCase())
 							),
 						].map((category) => (
 							<option key={category} value={category}>
@@ -57,7 +58,7 @@ export default function ProductsPage() {
 							</option>
 						))}
 					</select>
-				</div>
+				</div> */}
 			</div>
 
 			<ProductsList products={filteredProducts} />
